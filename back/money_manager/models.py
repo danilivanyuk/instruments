@@ -93,7 +93,6 @@ class Category(models.Model):
 
 
 class Transaction(models.Model):
-
     id = models.BigAutoField(primary_key=True)
     budget_id = models.ForeignKey(
         Budget,
@@ -126,6 +125,7 @@ class Transaction(models.Model):
         choices=TRANSACTION_CHOICES,
         null=False,
         blank=False,
+        max_length=20,
     )
 
     created_at = models.DateTimeField(
