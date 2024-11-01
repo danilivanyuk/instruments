@@ -56,6 +56,13 @@ class Budget(models.Model):
         blank=True,
     )
 
+    class Meta:
+        verbose_name = "Budget"
+        verbose_name_plural = "Budgets"
+
+    def __str__(self):
+        return f"{self.title}"
+
 
 class Category(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -90,6 +97,13 @@ class Category(models.Model):
         null=True,
         blank=True,
     )
+
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+
+    def __str__(self):
+        return f"{self.title}"
 
 
 class Transaction(models.Model):
@@ -128,6 +142,13 @@ class Transaction(models.Model):
         max_length=20,
     )
 
+    amount = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        null=False,
+        blank=False,
+    )
+
     created_at = models.DateTimeField(
         auto_now_add=True,
         verbose_name="Created At",
@@ -142,3 +163,10 @@ class Transaction(models.Model):
         null=True,
         blank=True,
     )
+
+    class Meta:
+        verbose_name = "Transaction"
+        verbose_name_plural = "Transactions"
+
+    def __str__(self):
+        return f"{self.title}"
