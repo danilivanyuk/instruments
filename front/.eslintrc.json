@@ -1,0 +1,167 @@
+{
+  "extends": [
+    "@feature-sliced",
+    "plugin:@conarti/feature-sliced/recommended",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@stylistic/recommended-extends",
+    "plugin:@typescript-eslint/recommended",
+    "eslint-config-prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "@stylistic",
+    "@tanstack/query",
+    "@tanstack/eslint-plugin-query"
+  ],
+  "root": true,
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js"
+      ],
+      "parser": "@typescript-eslint/parser"
+    }
+  ],
+  "globals": {
+    "JSX": true
+  },
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "rules": {
+    "no-undef": "off",
+    "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
+    "@stylistic/quotes": [
+      "warn",
+      "single"
+    ],
+    "@stylistic/member-delimiter-style": [
+      "error",
+      {
+        "multiline": {
+          "delimiter": "semi",
+          "requireLast": true
+        },
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        },
+        "multilineDetection": "brackets"
+      }
+    ],
+    "@stylistic/padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": [
+          "return",
+          "block-like"
+        ]
+      },
+      {
+        "blankLine": "always",
+        "prev": "block-like",
+        "next": "*"
+      }
+    ],
+    "no-case-declarations": "off",
+    "@stylistic/brace-style": "off",
+    "@stylistic/operator-linebreak": [
+      "warn",
+      "after",
+      {
+        "overrides": {
+          "?": "before",
+          ":": "before"
+        }
+      }
+    ],
+    "@stylistic/jsx-one-expression-per-line": "off",
+    "@stylistic/arrow-parens": [
+      "warn",
+      "as-needed"
+    ],
+    "@stylistic/spaced-comment": "off",
+    "@stylistic/jsx-curly-spacing": [
+      "warn",
+      "always"
+    ],
+    "@stylistic/template-curly-spacing": [
+      "warn",
+      "always"
+    ],
+    "@stylistic/semi": [
+      "error",
+      "always"
+    ],
+    "@stylistic/jsx-indent-props": [
+      "error",
+      {}
+    ],
+    "@stylistic/eol-last": [
+      "warn",
+      "never"
+    ],
+    "@stylistic/indent-binary-ops": [
+      "error",
+      4
+    ],
+    "@stylistic/jsx-indent": [
+      "error",
+      4
+    ],
+    "react/jsx-uses-react": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "padding-line-between-statements": "error",
+    "@stylistic/indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "prefer-arrow-callback": "warn",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "react/function-component-definition": [
+      "warn",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          "@mui/*/*/*"
+        ]
+      }
+    ],
+    "@tanstack/query/exhaustive-deps": "error",
+    "@tanstack/query/stable-query-client": "error"
+  }
+}
