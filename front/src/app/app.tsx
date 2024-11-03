@@ -1,7 +1,9 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react';
+import { QueryProvider } from './providers';
+import { BrowserRouterProvider } from './providers/browserRouterProvider';
 
 export const App: FunctionComponent = () => (
-  <div>
-    App
-  </div>
-)
+  <QueryProvider>
+    <BrowserRouterProvider />
+  </QueryProvider>
+);
