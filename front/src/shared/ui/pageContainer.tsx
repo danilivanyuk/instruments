@@ -6,10 +6,5 @@ type TProps = {
 };
 
 export const PageContainer = (props: TProps) => {
-  return (
-    <div>
-      <p>Page title</p>
-      {props.children}
-    </div>
-  );
+  return <div className="container mx-auto min-h-screen">{props.children}</div>;
 };

@@ -1,7 +1,9 @@
 export const AddTransaction = () => {
   return (
     <div>
-      <p>Add transaction</p>
+      <button className="bg-white hover:bg-sky-700 w-[50px] h-[50px] rounded-full">
+        +
+      </button>
     </div>
   );
 };
